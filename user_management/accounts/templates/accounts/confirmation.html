@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmation</title>
+</head>
+<body>
+    <h2>Booking Confirmation</h2>
+    <p>Movie: {{ reservation.showtime.movie.title }}</p>
+    <p>Showtime: {{ reservation.showtime.showtime }}</p>
+    <p>Seats: {% for seat in reservation.seats.all %}{{ seat.row }}{{ seat.number }} {% endfor %}</p>
+    <p>Total Price: ${{ reservation.total_price }}</p>
+    <p>Payment Status: {% if reservation.payment_status %}Paid{% else %}Pending{% endif %}</p>
+</body>
+</html>

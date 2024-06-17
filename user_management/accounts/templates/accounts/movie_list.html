@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="home"><a href="{% url 'home' %}">HOME</a></div>
+            <div class="movie"><a href="{% url 'movie_list' %}">Movies</a></div>
+            <div class="profile"><a href="{% url 'login' %}">Profile</a></div>
+            <div class="menu"><a href="{% url 'home' %}">Menu</a></div>
+        </div>
+    </header>
+    <div class="movie_list"> 
+    <h2>Available Movies</h2>
+    <div class="movies">
+    <ul><div class="all_movies">
+        {% if movies %}
+            {% for movie in movies %}
+                <li>
+                    <div class="movie_box">
+                    <div class="movie_name"><h3>{{ movie.title }}</h3>
+                    <p>Genre: {{ movie.genre }}</p>
+                    <p>{{ movie.description }}</p></div>
+                    <ul>
+                        {% for showtime in movie.showtime_set.all %}
+                            <li>
+                                <div class="view_shotime"><a href="{% url 'showtime_detail' movie.id showtime.id %}">View Showtime Details</a></div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    </div>
+                </li>
+            {% endfor %}
+        {% else %}
+            <li>No movies available</li>
+        {% endif %}
+        </div>
+    </ul>
+    </div>
+    <div class="logout"><a href="{% url 'logout' %}">Logout</a></div>
+    </div>
+</body>
+</html>
+<style>
+    body{
+        margin: 0%;
+        padding: 0%;
+        box-shadow: none;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(146, 192, 177);
+    }
+    /* header */
+    .header{
+        height: 10vh;
+        background-color: #262626;
+        display: flex;
+        justify-content: space-evenly;
+        box-shadow: 0px 5px 15px 5px rgba(0,0,0,.5);
+    }
+    .home{
+        position: relative;
+        right: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .home a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .movie{
+        margin-left: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .movie a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /* main_body */
+    .movie_list{
+        margin-top: 10vh;
+        text-align: center;
+        text-transform: uppercase;
+        color: rgb(34, 33, 33);
+        
+    }
+    .movie_list h2{
+        font-size: 4vh;
+        
+        
+    }
+    .movie_list ul{
+        position: absolute;
+        left: 5%;
+
+        
+    }
+    .movie_box{
+        height: 50vh;
+        width: 70vh;
+        border: 1px solid rgb(26, 24, 24);
+        border-radius: 5px;
+        background-color:#070a0b;
+        margin: 5%;     
+    }
+    
+    .movies li{
+        position: relative;
+        top: 10%;
+        color: wheat;
+        text-transform: none;
+    }
+    .movies h3{
+        font-size: 3.5vh;
+        position: relative;
+        left: 5%;
+        height: 10vh;
+        width: 20vh; 
+        color: #92c0b1; 
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        text-transform: uppercase;   
+
+    }
+    .movie_name p{
+        position: relative;
+        top: 5%;
+    }
+    .movie_name{
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+        
+    }
+    .view_shotime a{
+        text-decoration: none;
+        color: #e9f7fb;
+    }
+    .all_movies{
+        list-style-type: none;
+        text-align: center;
+    }
+    .logout{
+        font-size: 3vh;
+        height: 5vh;
+        width: 12vh;
+        border: 1px solid rgb(22, 20, 20);
+        border-radius: 10px;
+        background-color: #860301;
+        text-align: center;
+        position: fixed;
+        right: 2%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        
+    }
+    .logout a{
+        color: #e9f7fb;
+        text-decoration: none;
+        
+    }
+</style>

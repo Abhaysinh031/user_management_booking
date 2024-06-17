@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Success</title>
+</head>
+<body>
+    <h2>Booking Successful!</h2>
+    <p>You have successfully booked:</p>
+    <p>Movie: {{ showtime.movie.title }}</p>
+    <p>Showtime: {{ showtime.start_time }}</p>
+    <p>Seat: Row {{ seat.row }}, Seat {{ seat.number }}</p>
+    
+    <a href="{% url 'movie_list' %}">Back to Movies</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Success</title>
+</head>
+<body>
+    <h2>Booking Successful</h2>
+    <p>You have successfully booked Row {{ seat.row }}, Seat {{ seat.number }} for {{ showtime.movie.title }} at {{ showtime }}.</p>
+    <a href="{% url 'movie_list' %}">Back to Movies</a>
+</body>
+</html>

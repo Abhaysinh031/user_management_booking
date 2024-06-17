@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="home"><a href="{% url 'home' %}">HOME</a></div>
+            <div class="movies"><a href="{% url 'login' %}">Movies</a></div>
+            <div class="profile"><a href="{% url 'login' %}">Profile</a></div>
+            <div class="menu"><a href="{% url 'home' %}">Menu</a></div>
+        </div>
+    </header>
+    <Div class="Welcome">
+    <h2>Welcome to the Movie seat Booking</h2>
+      <div class="login">
+        <a href="{% url 'login' %}">Login</a>
+      </div>
+      <div class="register">
+        <a href="{% url 'register' %}">Register</a>
+      </div>
+    </Div>
+</body>
+</html>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(146, 192, 177);
+    }
+    /* header */
+    .header{
+        height: 10vh;
+        background-color: #262626;
+        display: flex;
+        justify-content: space-evenly;
+        box-shadow: 0px 5px 15px 5px rgba(0,0,0,.5);
+    }
+    .home{
+        position: relative;
+        right: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+    }
+    .movies{
+        margin-left: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .movies a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+    }
+    
+    .profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+    }
+
+    /* main_body */
+    .Welcome{
+        background-color: #262626;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items:center ;
+        flex-wrap: wrap;
+        height: 50vh;
+        width: 35%;
+        position: absolute;
+        top: 30vh;
+        left: 30%;
+        box-shadow: 0px 5px 15px 5px rgba(0,0,0,.5);
+    }
+    
+    h2{
+        color: wheat;
+        font-size: 35px;
+        text-align: center;
+        
+    }
+
+    a{
+        color: black;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .login {
+        background-color: aqua;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        height: 5vh;
+        width: 5vw;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items:center;
+        position: relative;
+        margin-right: 20%;
+        }
+    .register{
+        background-color: aqua;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        height: 5vh;
+        width: 5vw;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items:center;
+    }
+</style>
+

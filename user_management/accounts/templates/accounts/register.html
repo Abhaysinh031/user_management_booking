@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="home"><a href="{% url 'home' %}">HOME</a></div>
+            <div class="movies"><a href="{% url 'login' %}">Movies</a></div>
+            <div class="profile"><a href="{% url 'login' %}">Profile</a></div>
+            <div class="menu"><a href="{% url 'home' %}">Menu</a></div>
+        </div>
+    </header>
+    <div class="register">
+        <h2>Register</h2>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="register_button">
+        <button type="submit">Register</button>
+            <div class="already_account">
+                <h2>If you have a already Account then<a href="{% url 'login' %}">Login</a></h2>
+             </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(146, 192, 177);
+        box-shadow: none;
+        margin: 0;
+        padding: 0%;
+        
+    }
+    /* header */
+    .header{
+        height: 10vh;
+        background-color: #262626;
+        display: flex;
+        justify-content: space-evenly;
+        box-shadow: 0px 5px 15px 5px rgba(0,0,0,.5);
+    }
+    .home{
+        position: relative;
+        right: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .home a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .movies{
+        margin-left: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .movies a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /* main_body */
+    .register{
+        background-color: #262626;
+        height: 92vh;
+        width: 50%;
+        position: absolute;
+        top: 13%;
+        left: 25%;
+        right: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        box-shadow: 0px 5px 15px 5px rgba(0,0,0,.5);
+    }
+    .register h2{
+        font-size: 6vh;
+        margin-top: 10px;
+        color: white;
+    }
+    .register form{
+        position: relative;
+        left: 3%;
+        font-size: 2.5vh;
+        height: 60vh;
+        width: 80%;
+        text-align: start;
+        color: wheat;
+        margin-bottom: 5vh;
+        
+    }
+    .register p label{
+        font-size: 2.5vh;
+        text-align:justify;
+        font-weight: bold;
+
+    }
+    .register input{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-top: 5px;
+        height: 3vh;
+        width: 90%;
+        border-bottom: 2px solid wheat;
+        border-top:none ;
+        border-left: none;
+        border-right: none;
+        background-color: transparent;
+    }
+    .register button {
+        background-color: #860301;
+        height: 6vh;
+        width: 80%;
+        font-size: 2.5vh;
+        position: relative;
+        left: 10%;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        color: white;
+    }
+    .already_account h2 {
+        font-size: 2.5vh;
+        color: whitesmoke;
+        font-weight: 100;
+        text-align: center;
+    }
+    .already_account a{
+        color: rgb(67, 106, 211);
+        text-decoration: none;
+    }
+</style>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Failure</title>
+</head>
+<body>
+    <h2>Booking Failed</h2>
+    <p>Sorry, the seat you selected has already been booked:</p>
+    <p>Movie: {{ showtime.movie.title }}</p>
+    <p>Showtime: {{ showtime.start_time }}</p>
+    <p>Seat: Row {{ seat.row }}, Seat {{ seat.number }}</p>
+    
+    <a href="{% url 'seat_booking' showtime.id %}">Back to Seat Selection</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>

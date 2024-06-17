@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="home"><a href="{% url 'home' %}">HOME</a></div>
+            <div class="movies"><a href="{% url 'movie_list' %}">Movies</a></div>
+            <div class="profile"><a href="{% url 'login' %}">Profile</a></div>
+            <div class="menu"><a href="{% url 'home' %}">Menu</a></div>
+        </div>
+    </header>
+    <div class="index">
+        <h2>Welcome Book my show</h2>
+        <div class="view_movies">
+        <a href="{% url 'movie_list' %}">View Movies</a>
+        </div>
+        <div class="logout">
+        <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(146, 192, 177);
+    }
+    /* header */
+    .header{
+        height: 10vh;
+        background-color: #262626;
+        display: flex;
+        justify-content: space-evenly;
+        box-shadow: 0px 5px 15px 5px rgba(0,0,0,.5);
+    }
+    .home{
+        position: relative;
+        right: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .movies{
+        margin-left: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .movies a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /* main_body */
+    .index{
+        background-color: #262626;
+        height: 50vh;
+        width: 70vh ;
+        position: absolute;
+        top: 30%;
+        left: 35%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 5px 15px 5px rgba(0,0,0,.5);
+    }
+    .index h2{
+        color: antiquewhite;
+        
+    }
+    .index a{
+        font-size: 3vh;
+        text-decoration: none;
+        color: whitesmoke;
+    }
+    .view_movies{
+        background-color: #860301;
+        height: 6vh;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3%;
+        margin-top: 3%;
+        border-radius: 8px;
+    }
+    .logout{
+        background-color: #860301;
+        height: 6vh;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2%;
+        border-radius: 8px;
+    }
+</style>

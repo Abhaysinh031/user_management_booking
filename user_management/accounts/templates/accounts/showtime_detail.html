@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Showtime Details</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="home"><a href="{% url 'home' %}">HOME</a></div>
+            <div class="movies"><a href="{% url 'movie_list' %}">Movies</a></div>
+            <div class="profile"><a href="{% url 'login' %}">Profile</a></div>
+            <div class="menu"><a href="{% url 'home' %}">Menu</a></div>
+        </div>
+    </header>
+    <div class="showtime">
+        <h2>{{ showtime.movie.title }}</h2>
+        <p>Showtime: {{ showtime.start_time }}</p>
+
+        <h3>Seats :</h3>
+        <ul>
+            {% for seat in seats %}
+                <li>Row: {{ seat.row }}, Seat: {{ seat.number }} - {% if seat.is_booked %}Booked{% else %}Available{% endif %}</li>
+            {% endfor %}
+        </ul>
+        <div class="showtime_links">
+            <div class="book_seats"><a href="{% url 'seat_booking' showtime.id %}">Book Seats</a></div>
+            <div class="back_to_movies"><a href="{% url 'movie_list' %}">Back to Movies</a></div>
+            <div class="logout"><a href="{% url 'logout' %}">Logout</a></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    body{
+        margin: 0%;
+        padding: 0%;
+        box-shadow: none;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(146, 192, 177);
+    }
+    /* header */
+    .header{
+        height: 10vh;
+        background-color: #262626;
+        display: flex;
+        justify-content: space-evenly;
+        box-shadow: 0px 5px 15px 5px rgba(0,0,0,.5);
+    }
+    .home{
+        position: relative;
+        right: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .home a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .movies{
+        margin-left: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .movies a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu a{
+        font-size: 3vh;
+        color: wheat;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /* main_body */
+    .showtime{
+        height: 80vh;
+        width: 30%;
+        color: wheat;
+        background-color: rgb(26, 24, 24);
+        position: absolute;
+        top: 30%;
+        left: 35%;
+        box-shadow: 0px 5px 15px 5px rgba(0,0,0,.5);
+
+    }
+    .showtime h2{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 4vh;
+        color: #92c0b1;
+    }
+    .showtime p{
+        text-align: center;
+        font-size: 2.7vh;
+        color: beige;
+
+    }
+    .showtime h3{
+        text-align: justify;
+        position: relative;
+        left: 2%;
+        color: #92c0b1;
+    }
+    .showtime ul{
+        color: #fbdbac;
+    }
+    .showtime_links{
+        height: 10vh;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .showtime_links a{
+        color: rgb(206, 243, 248);
+        text-decoration: none;
+        font-size: 2.3vh;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .book_seats{
+        height: 6vh;
+        width: 15vh;
+        background-color: #860301;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .back_to_movies{
+        height: 6vh;
+        width: 15vh;
+        background-color: #860301;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logout{
+        height: 6vh;
+        width: 15vh;
+        background-color: #860301;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

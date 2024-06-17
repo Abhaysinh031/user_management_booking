@@ -1,0 +1,22 @@
+<!-- templates/accounts/booking_confirmation.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <h2>Confirm Your Booking</h2>
+    <p>Movie: {{ showtime.movie.title }}</p>
+    <p>Showtime: {{ showtime.start_time }}</p>
+    <p>Seat: Row {{ seat.row }}, Seat {{ seat.number }}</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Booking</button>
+    </form>
+    
+    <a href="{% url 'seat_booking' showtime.id %}">Back to Seat Selection</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>
